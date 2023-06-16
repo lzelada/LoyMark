@@ -1,0 +1,15 @@
+.title {
+    padding: 0 25px;
+    background-color: #673ab7;
+    text-align: center;
+    color: white;
+}
+
+.card {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.actions {
+    justify-content: center;
+}

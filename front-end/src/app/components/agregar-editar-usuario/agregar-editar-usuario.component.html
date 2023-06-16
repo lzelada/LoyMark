@@ -1,0 +1,79 @@
+<app-toolbar></app-toolbar>
+
+<app-spinner *ngIf="loading"></app-spinner>
+
+
+<div class="container">
+    <mat-card class="card">
+        <mat-card-subtitle class="subtitle">
+            <h2>{{title}}</h2>
+        </mat-card-subtitle>
+
+        <form [formGroup]="form" (ngSubmit)="operation()">
+            <mat-grid-list cols="2" rowHeight="80px">
+                <mat-grid-tile [colspan]="2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input formControlName="nombre" matInput autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Apellido</mat-label>
+                        <input formControlName="apellido" matInput autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Correo Electrónico</mat-label>
+                        <input formControlName="email" matInput autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+                
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha de Nacimiento</mat-label>
+                        <input formControlName="fechaNacimiento"matInput [matDatepicker]="picker">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Teléfono</mat-label>
+                        <input type="number" formControlName="telefono" matInput autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Pais</mat-label>
+                        <mat-select formControlName="pais">
+                            <mat-option value="ARG">Argentia</mat-option>
+                            <mat-option value="CRI">Costa Rica</mat-option>
+                            <mat-option value="PR">Puerto Rico</mat-option>
+                            <mat-option value="BR">Brasil</mat-option>
+                            <mat-option value="CO">Colombia</mat-option>
+                            <mat-option value="EC">Ecuador</mat-option>
+                            <mat-option value="UY">Uruguay</mat-option>
+                            <mat-option value="DO">Republica Dominicana</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2">
+                    <span>¿Desea recibir información?</span>
+                    <mat-checkbox formControlName="pregunta">Check</mat-checkbox>
+                </mat-grid-tile>
+                
+                <mat-grid-tile [colspan]="2">
+                    <button [disabled]="form.invalid" type="submit" class="btnAgregar" mat-button color="primary">Guardar</button>
+                    <button mat-button routerLink="/usuarios">Volver</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</div>

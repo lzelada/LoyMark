@@ -1,0 +1,21 @@
+<div class="title">
+    <h1 routerLink="/usuarios">Usuario</h1>
+</div>
+
+<div *ngIf="usuario != null" class="container">
+    <mat-card class="card">
+        <mat-card-title>{{usuario.nombre}}</mat-card-title>
+
+        <mat-card-content>
+            <p><strong>Apellido:</strong> {{usuario.apellido}}</p>
+            <p><strong>Email:</strong> {{usuario.email}}</p>
+            <p><strong>Telefono:</strong> {{usuario.telefono}}</p>
+            <p><strong>Fecha de Nacimiento:</strong> {{usuario.fechaNacimiento}}</p>
+            <p><strong>Pais:</strong> {{usuario.pais}}</p>
+        </mat-card-content>
+
+        <mat-card-actions class="actions">
+            <button routerLink="/usuarios" mat-raised-button>Volver</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

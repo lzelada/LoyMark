@@ -1,0 +1,31 @@
+.title {
+    padding-top: 15px;
+}
+
+table {
+    width: 100%;
+}
+
+.container {
+    margin: 0 10%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.icon-search {
+    cursor: pointer;
+}
+
+.delete {
+    cursor: pointer;
+    color: #E15639;
+}
+
+.edit {
+    cursor: pointer;
+    color: #1878B0;
+}
+
